@@ -1,0 +1,229 @@
+% Jenny Zhen's Resume
+% Last Modified: December 11, 2012
+
+\documentclass[11pt,oneside]{article}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+
+\pagestyle{empty}
+\geometry{letterpaper,tmargin=0.50in,bmargin=0.50in,lmargin=0.70in,rmargin=0.70in,headheight=0in,headsep=0in,footskip=.3in}
+
+\pdfminorversion=5
+\pdfcompresslevel=9
+\pdfobjcompresslevel=9
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+% Name and contact information
+\newcommand{\name}{Jenny Zhen}
+\newcommand{\addr}{245B Perkins Road, Rochester, NY 14623}
+%\newcommand{\addr}{11878 Paseo Lucidio, San Diego, CA 92128}
+\newcommand{\phone}{347.348.1319}
+\newcommand{\email}{jenz.rit@gmail.com}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and environments
+
+% Tabs
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+
+% This defines how the name looks
+\newcommand{\bigname}[1]{
+	\begin{center}\fontfamily{phv}\selectfont\Huge\scshape#1\end{center}
+}
+
+% A ressection is a main section (<H1>Section</H1>)
+\newenvironment{ressection}[1]{
+	\vspace{1pt}
+	{\fontfamily{phv}\selectfont\Large#1}
+	\begin{itemize}
+	\vspace{-2pt}
+}{
+	\end{itemize}
+}
+
+% A resitem is a simple list element in a ressection (first level)
+\newcommand{\resitem}[1]{
+	\vspace{-4pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A ressubitem is a simple list element in anything but a ressection (second level)
+\newcommand{\ressubitem}[1]{
+	\vspace{-5pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A resbigitem is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%  Arg 2: Location
+%  Arg 3: Title and/or date range
+\newcommand{\resbigitem}[3]{
+	\vspace{-5pt}
+	\item
+	\textbf{#1}\hfill#2 \\
+	\textit{#3}
+}
+
+\newcommand{\resbigitemW}[3]{
+	\vspace{-5pt}
+	\item
+	\textbf{#1}\textit{#2}\textit{#3}
+	\vspace{2pt}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec}[3]{
+	\resbigitem{#1}{#2}{#3}
+	\vspace{-5pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+\newenvironment{ressubsecW}[3]{
+	%\begin{tabbing}
+	\resbigitemW{#1}\\{#2}{#3}
+	%\end{tabbing}
+}
+
+% This is a simple sublist
+\newenvironment{reslist}[1]{
+	\resitem{\textbf{#1}}
+	\vspace{-7pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Now for the actual document:
+
+\begin{document}
+
+\fontfamily{ppl} \selectfont
+
+% Name with horizontal rule
+\bigname{\name}
+
+\vspace{-8pt} \rule{\textwidth}{1pt}
+
+\vspace{-5pt} {\small\itshape \addr \hfill \phone; \email}
+
+\vspace{3 pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Objective}
+	\ressubitem{Seeking a co-op opportunity to enhance my knowledge of software engineering in a \\ real-world setting during the fall semester of 2013.}
+	%\ressubitem{Seeking a part-time on-campus position that can offer a rewarding experience in a technical field starting Spring 2013.}
+	%\ressubitem{Seeking a position that can offer me a challenging, but also rewarding experience in a communications, software development, or graphic design field.}
+	%\ressubitem{Seeking a clerical position that can offer me a challenging, but also rewarding experience to enhance my communication skills and work ethics.}
+
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Education}
+
+	\begin{ressubsec}{Rochester Institute of Technology}{Rochester, NY}{Majoring in Software Engineering; Minoring in Computer Science \& Applied Mathematics}
+		\ressubitem{GPA: 3.75/4.00; Expected Graduation Date: May, 2015}
+	\end{ressubsec}
+
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Skills}
+	\begin{reslist}{Languages:}
+		\ressubitem{Worked with Java, C, Ruby, Ruby on Rails, Python 2.7-3.2, C++, HTML, and \LaTeX.}
+		\ressubitem{Familiar with CSS, Javascript, PHP, and SQL.}
+		%\ressubitem{Learning C, C++, Ruby, and Ruby on Rails.}
+	\end{reslist}
+	\begin{reslist}{Tools and Systems:}
+		\ressubitem{Adobe Suite, Visual Studio 2010, RubyMine, PyCharm, Git, SVN, and CVS.}
+		\ressubitem{Java: JUnit, Eclipse (djUnit, FindBugs+AWARE, Jumble), and IntelliJ IDEA.}
+	\end{reslist}
+	%\resitem{\textbf{Operating Systems:} Windows, Mac OS X, Ubuntu, and Solaris.}
+\end{ressection}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Projects}
+	\ressubitem{\textbf{Github: }\textit{https://github.com/jenzie}}
+	\begin{ressubsec}{HTML Editor (Java)}{}{Software Engineer: March, 2013--April, 2013}
+		\ressubitem{Focused on the design; analyzed design patterns that could simplify the design with least cost.}
+	\end{ressubsec}
+	\begin{ressubsec}{Testing of "Beets: The Music Geek's Media Organizer" (Python)}{}{Software Tester - Code Inspections Lead: November, 2012--February, 2013}
+		\ressubitem{Conducted rigorous testing using various white/black box  techniques, in a team of six.}
+	\end{ressubsec}
+	\begin{ressubsec}{Pizza Delivery System (Java)}{}{Test Coordinator: September, 2012--November, 2012}
+		\ressubitem{Worked on various tasks, including the design, requirements, and presentations to customers.}
+		\ressubitem{Performed white \& black box testing, including testing with an independent test group.}
+	\end{ressubsec}
+	\begin{ressubsec}{Cable Car (Python) }{}{ Software Developer: November, 2011--February, 2012}
+		\ressubitem{Developed the AI for multiple player modules for the game, Cable Car, in a team of two.}
+	\end{ressubsec}
+
+	\begin{ressubsecW}{Individual Projects:}{}
+		{\textbf{Tic-Tac-Toe (Java) } \textit{ April, 2013--April, 2013}\\
+		\textbf{ThoughtShare (Rails) } \textit{ February, 2013--February, 2013}\\
+		\textbf{Diet Manager (Ruby) } \textit{ January, 2013--February, 2013}\\
+		\textbf{Huffman (C) } \textit{ December, 2012--January, 2013}\\
+		\textbf{Sudoku (C) } \textit{ November, 2012--December, 2012}\\
+		\textbf{ATM (Java) } \textit{ April, 2012--May, 2012}}
+		%\textbf{Connect 4 (Java) } \textit{ March, 2012--April, 2012}}
+	\end{ressubsecW}
+\end{ressection}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{ressection}{Related Courses}
+%	\resitem{Personal Software Engineering, Software Testing, Software Engineering, Computer Science I-III, C++ Programmers in Network Security, Computer System Fundamentals, and Network Fundamentals.}
+%	\resitem{Calculus I-III, Discrete Mathematics I/II, and Data Analysis I.}
+%	\resitem{In progress: Software Subsystems, Process \& Project Management, Graph Theory, Differential Eq.}
+%\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Experience}
+
+	%\begin{ressubsec}{NTID - Department of Access Services}{Rochester, NY}{Office Assistant: September, 2012--present}
+		%\ressubitem{Worked with the Access Services Department, comprised of nearly 200 employees, to maintain notetaking, captioning, and interpreting services. Data entry into Notetaking Archives Project is done with accuracy, confidentiality, and attention to detail.}
+	%\end{ressubsec}
+
+	\begin{ressubsec}{RIT - Department of Software Engineering}{Rochester, NY}{Undergraduate Research Intern: May, 2013--August, 2013}
+		\ressubitem{Apply research to a programming project; project-specific details to be determined.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{RIT - Department of Computer Science}{Rochester, NY}
+{Grader: September, 2012--present}
+		\ressubitem{Graded assignments for 60+ students in Python/Java for the  Computer Science I-III sequence.}
+	\end{ressubsec}
+
+	%\begin{ressubsec}{NTID - Department of Access Services}{Rochester, NY}{Notetaker: September, 2011--present}
+		%\ressubitem{Took highly detailed notes for deaf/hard of hearing in courses of various disciplines.}
+%	\end{ressubsec}
+
+%\begin{ressubsec}{Brooklyn Technical High School}{Brooklyn, NY}{Computer Assistant: September, 2008--June, 2010}
+%		\ressubitem{Resolved technical issues in the library.}
+%	\end{ressubsec}
+
+%\begin{ressubsec}{Brooklyn Technical High School}{Brooklyn, NY}{TA/Lab Technician: September, 2008--June, 2009}
+%		\ressubitem{Maintained student accounts, equipment, and paperwork.}
+%	\end{ressubsec}
+
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Achievements and Activities}
+	\resitem{RIT Dean's List for achieving a GPA of 3.4 or above for the academic quarter (2011-2013).}
+
+	\resitem{Achieved membership of Computer Science House at RIT (August, 2010).}
+
+	\resitem{Joined Women in Computing at Rochester Institute of Technology (August, 2010).}
+
+	%\resitem{Received the NY State Advanced Regents Diploma with Honors (June, 2010) and NCSSSMT Endorsed Diploma - BTHS Diploma (June, 2010).}
+
+\end{ressection}
+
+
+\end{document}
